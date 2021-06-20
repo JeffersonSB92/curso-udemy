@@ -1,6 +1,6 @@
-package composicao.entidade;
+package composicao.exemplos.entidades;
 
-import composicao.entidade.enums.NivelDoTrabalhador;
+import composicao.exemplos.entidades.enums.NivelDoTrabalhador;
 
 import java.util.ArrayList;
 import java.util.Calendar;

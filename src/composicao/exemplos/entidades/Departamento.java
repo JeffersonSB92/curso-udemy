@@ -1,4 +1,4 @@
-package composicao.entidade;
+package composicao.exemplos.entidades;
 
 public class Departamento {
 

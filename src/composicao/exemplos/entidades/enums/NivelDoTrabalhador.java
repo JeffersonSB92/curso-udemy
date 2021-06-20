@@ -1,4 +1,4 @@
-package composicao.entidade.enums;
+package composicao.exemplos.entidades.enums;
 
 public enum NivelDoTrabalhador {
 

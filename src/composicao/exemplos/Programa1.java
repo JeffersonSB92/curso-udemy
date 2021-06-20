@@ -1,18 +1,17 @@
-package composicao;
+package composicao.exemplos;
 
-import composicao.entidade.ContratoPorHora;
-import composicao.entidade.Departamento;
-import composicao.entidade.Trabalhador;
-import composicao.entidade.enums.NivelDoTrabalhador;
+import composicao.exemplos.entidades.ContratoPorHora;
+import composicao.exemplos.entidades.Departamento;
+import composicao.exemplos.entidades.Trabalhador;
+import composicao.exemplos.entidades.enums.NivelDoTrabalhador;
 
-import java.nio.file.attribute.UserDefinedFileAttributeView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Programa {
+public class Programa1 {
 
     public static void main(String[] args) throws ParseException {
 
