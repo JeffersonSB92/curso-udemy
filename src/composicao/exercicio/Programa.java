@@ -29,14 +29,17 @@ public class Programa {
         System.out.print("Data de Aniversário (DD/MM/AAAA): ");
         Date dataAniver = sdf.parse(sc.next());
         Cliente cliente = new Cliente (nomeDoCliente, email, dataAniver);
+        System.out.println();
         System.out.println("Entre os dados do Pedido: ");
         System.out.print("Status: ");
         sc.nextLine();
-        String status = sc.nextLine();
+        StatusDoPedido status = StatusDoPedido.valueOf(sc.next());
         Date momento = new Date();
-        Pedido pedido = new Pedido(momento, StatusDoPedido.valueOf(status), cliente);
+        Pedido pedido = new Pedido(momento, status, cliente);
+        System.out.println();
         System.out.print("Quantos itens para esse pedido? ");
         int n = sc.nextInt();
+        System.out.println();
         for (int i = 1; i <= n; i++){
             System.out.println("Entre os dados do item #" +i +":");
             sc.nextLine();
@@ -49,6 +52,7 @@ public class Programa {
             int quantidade = sc.nextInt();
             ItensDoPedido itens = new ItensDoPedido(quantidade,precoDoProduto, produto);
             pedido.addItem(itens);
+            System.out.println();
         }
 
         sc.close();

@@ -35,6 +35,14 @@ public class Trabalhador {
         this.nome = nome;
     }
 
+    public NivelDoTrabalhador getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(NivelDoTrabalhador nivel) {
+        this.nivel = nivel;
+    }
+
     public Double getSalarioBase() {
         return salarioBase;
     }

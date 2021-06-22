@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Pedido {
-
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private Date momento;
     private StatusDoPedido status;
@@ -22,6 +22,7 @@ public class Pedido {
 
     public Pedido(Date momento, StatusDoPedido status, Cliente cliente) {
         this.momento = momento;
+        this.status = status;
         this.cliente = cliente;
     }
 
@@ -31,6 +32,14 @@ public class Pedido {
 
     public void setMomento(Date momento) {
         this.momento = momento;
+    }
+
+    public StatusDoPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusDoPedido status) {
+        this.status = status;
     }
 
     public Cliente getCliente() {
@@ -56,7 +65,7 @@ public class Pedido {
     public double total() {
         double total = 0.0;
         for (ItensDoPedido x : itens) {
-            total = x.getPreco() * x.getQuantidade();
+            total += x.getPreco() * x.getQuantidade();
         }
         return total;
     }
@@ -64,18 +73,18 @@ public class Pedido {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Momento do pedido" + sdf1.format(momento) + "\n");
-        sb.append("Status do Pedido" + status + "\n");
-        sb.append("Cliente" + cliente.getNome() + " (" + cliente.getDataAniver() + ") - " + cliente.getEmail() + "\n");
-        sb.append("Itens do pedido: ");
+        sb.append("Momento do pedido: " + sdf1.format(momento) + "\n");
+        sb.append("Status do Pedido: " + status + "\n");
+        sb.append("Cliente: " + cliente.getNome() + " (" + sdf.format(cliente.getDataAniver()) + ") - " + cliente.getEmail() + "\n");
+        sb.append("Itens do pedido: \n");
         for (ItensDoPedido x : itens) {
             sb.append(x.getProduto().getNome()
                     + ", R$ "
-                    + x.getPreco()
+                    + String.format("%.2f", x.getPreco())
                     + ", Quantidade: "
                     + x.getQuantidade()
                     + ", Subtotal: R$ "
-                    + x.subTotal() + "\n");
+                    + String.format("%.2f", x.subTotal()) + "\n");
         }
         sb.append("Preço Total: R$ " + total());
 
