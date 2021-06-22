@@ -2,9 +2,9 @@ package vetor;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entidades.ProdutoVetor;
+import vetor.entidades.ProdutoVetor;
 
-public class Vetor2 {
+public class Produto2 {
 
     public static void main(String[] args) {
 

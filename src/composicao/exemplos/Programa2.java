@@ -1,4 +1,4 @@
-package composicao;
+package composicao.exemplos;
 
 import composicao.exemplos.entidades.Comentario;
 import composicao.exemplos.entidades.Post;

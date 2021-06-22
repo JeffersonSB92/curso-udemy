@@ -26,14 +26,6 @@ public class Post {
         this.curtidas = curtidas;
     }
 
-    public static SimpleDateFormat getSdf() {
-        return sdf;
-    }
-
-    public static void setSdf(SimpleDateFormat sdf) {
-        Post.sdf = sdf;
-    }
-
     public Date getMomento() {
         return momento;
     }
